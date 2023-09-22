@@ -1,0 +1,8 @@
+title: public-resource
+description: Description from model.
+type: object
+properties:
+  id:
+    type: string
+  prop:
+    $ref: ./hidden-models/hidden-resource.yaml

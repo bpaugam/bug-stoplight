@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: test
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+tags:
+  - name: test
+paths:
+  /api/test:
+    get:
+      operationId: get-test
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/PublicResource1'
+                  - $ref: '#/components/schemas/PublicResource2'
+components:
+  schemas:
+    PublicResource1:
+      x-stoplight:
+        id: sqssder23
+      x-tags:
+        - test
+      title: Public Resource 1
+      description: |
+        Description from API file.
+      $ref: ../models/public-resource.yaml
+    PublicResource2:
+      x-stoplight:
+        id: 8S7DSDXxwc87
+      x-tags:
+        - test
+      title: Public Resource 2
+      description: |
+        Description from API file.
+      allOf:
+        - $ref: ../models/public-resource.yaml

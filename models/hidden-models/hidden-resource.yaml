@@ -1,0 +1,5 @@
+title: hidden-resource
+type: object
+properties:
+  id:
+    type: string
